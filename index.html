@@ -28,13 +28,16 @@
     }
     h1 {
       margin: 0 0 10px;
-      font-size: 22px;
+      font-size: 20px;   /* 원래 22px → 줄임 */
     }
     p {
-      font-size: 14px;
+      font-size: 13px;   /* 원래 14px → 줄임 */
       color: #666;
       margin: 0 0 20px;
-      line-height: 1.35;
+      line-height: 1.4;
+      word-break: keep-all;     /* 단어 단위 줄바꿈 */
+      word-wrap: break-word;    /* 강제 줄바꿈 방지 */
+      text-align: center;
     }
     .links {
       display: flex;
@@ -52,6 +55,12 @@
       transition: background 0.2s;
     }
     .link:hover { background: #e5c26a; }
+
+    /* 작은 화면 대응 */
+    @media (max-width: 400px) {
+      h1 { font-size: 18px; }
+      p { font-size: 12px; }
+    }
   </style>
 </head>
 <body>
